@@ -15,13 +15,11 @@ doc.SetBottomMargin(0);
 doc.SetTopMargin(0);
 doc.SetRightMargin(0);
 doc.SetLeftMargin(0);
-for(int i = 0; i < NumberOfPages - 1; i++)
+for(int i = 0; i < NumberOfPages; i++)
 {
     ImageData data = ImageDataFactory.Create(InputDirectory + $"\\Page {i}.jpg");
     Image img = new Image(data);
     doc.Add(img.ScaleToFit(1224, 1566));
     
 }
-ImageData LastPage = ImageDataFactory.Create(InputDirectory + $"\\Page {NumberOfPages-1}.jpg");
-doc.Add(new Image(LastPage));
 doc.Close();
